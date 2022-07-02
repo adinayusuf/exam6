@@ -50,9 +50,9 @@ def update_view(request, pk):
 
 
 def delete_view(request, pk):
-    list = get_object_or_404(GuestBook, pk=pk)
+    guest = get_object_or_404(GuestBook, pk=pk)
     if request.method == 'GET':
-        return render(request, 'delete.html', {'list': list})
+        return render(request, 'delete.html', {"guests": guest})
     else:
-        list.delete()
+        guest.delete()
         return redirect('index')
