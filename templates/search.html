@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Поиск{% endblock %}
+
+{% block content %}
+    {% if query %}
+        <h1>Поиск по имени "{{ query }}"</h1>
+        <h3>
+            {% with results.count as total_results %}
+                Найдено {{ total_results }} записи {{ total_results|pluralize }}
+            {% endwith %}
+        </h3>
+        {% for guest in results %}
+            <div class="card bg-light mb-3" style="max-width: 25rem;">
+                <div class="card-header">{{ guest.name }} ({{ guest.email }})<span
+                        style="padding: 0px 40px;">&nbsp;</span>
+                    <a href="{% url 'update' guest.pk %}"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="{% url 'delete' guest.pk %}"><i class="fa-solid fa-trash-can"></i></a></div>
+                <div class="card-body">
+                    <p class="card-text">{{ guest.text }}</p>
+                </div>
+            </div>
+        {% empty %}
+            <p>Нет результатов поиска.</p>
+        {% endfor %}
+        </button><a href="{% url "guest_search" %}" class="btn btn-primary">Искать снова</a></button>
+        </button><a href="{% url "index" %}" class="btn btn-primary">Назад</a></button>
+    {% else %}
+        <h1>Поиск записи</h1>
+        <form action="." method="get">
+            {{ form.as_p }}
+            <input type="submit" value="Поиск" class="btn btn-primary">
+            </button><a href="{% url "index" %}" class="btn btn-primary">Назад</a></button>
+        </form>
+    {% endif %}
+{% endblock %}

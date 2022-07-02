@@ -1,10 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from webapp.models import GuestBook
-from webapp.forms import GuestForm
+from webapp.forms import GuestForm, SearchForm
 
-
-# Create your views here.
 
 def index_view(request):
     guest = GuestBook.objects.order_by('-create_time').filter(status='active')
@@ -56,3 +54,19 @@ def delete_view(request, pk):
     else:
         guest.delete()
         return redirect('index')
+
+
+def guest_search(request):
+    form = SearchForm()
+    query = None
+    results = []
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = GuestBook.objects.filter(name__icontains=query)
+    return render(request,
+                  'search.html',
+                  {'form': form,
+                   'query': query,
+                   'results': results})
