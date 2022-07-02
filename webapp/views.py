@@ -47,3 +47,12 @@ def update_view(request, pk):
             list.save()
             return redirect('index')
         return render(request, 'update.html', {'form': form})
+
+
+def delete_view(request, pk):
+    list = get_object_or_404(GuestBook, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'delete.html', {'list': list})
+    else:
+        list.delete()
+        return redirect('index')

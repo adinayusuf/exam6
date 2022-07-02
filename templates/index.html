@@ -1,25 +1,22 @@
-{%  extends "base.html"%}
+{% extends "base.html" %}
 {% block title %} Главная страница{% endblock %}
 {% load static %}
-    {%  block nav %}
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'create' %}">Создание записи</a>
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'create' %}">Создание записи</a>
 
-  </li>
-    {%  endblock %}
-{% block content %}
-        <h1>Главная Страница</h1>
-        {% for guest in  guests %}
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">{{ guest.name }}</h5>
-                <p class="card-text">{{ guest.email }}</p>
-                   <a href="{% url 'update' guest.pk %}">Редактирование<i class="fa-solid fa-pencil"></i></a>
-                  <div>
-                      <p class="card-text">{{ guest.text }}</p> </div>
-          </div>
-        </div>
-    <br>
-{% endfor %}
+    </li>
 {% endblock %}
-
+{% block content %}
+    <h1>Главная Страница</h1>
+    {% for guest in  guests %}
+        <div class="card bg-light mb-3" style="max-width: 25rem;">
+        <div class="card-header">{{ guest.name }} ({{ guest.email }})&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'update' guest.pk %}"><i class="fa-solid fa-pencil"></i></a>
+            <a href="{% url 'delete' guest.pk %}"><i class="fa-solid fa-trash-can"></i></a></div>
+        <div class="card-body">
+            <p class="card-text">{{ guest.text }}</p>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}
