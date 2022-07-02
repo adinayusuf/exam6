@@ -1,0 +1,25 @@
+{%  extends "base.html"%}
+{% block title %} Главная страница{% endblock %}
+{% load static %}
+    {%  block nav %}
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'create' %}">Создание записи</a>
+
+  </li>
+    {%  endblock %}
+{% block content %}
+        <h1>Главная Страница</h1>
+        {% for guest in  guests %}
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{ guest.name }}</h5>
+                <p class="card-text">{{ guest.email }}</p>
+                   <a href="{% url 'update' guest.pk %}">Редактирование<i class="fa-solid fa-pencil"></i></a>
+                  <div>
+                      <p class="card-text">{{ guest.text }}</p> </div>
+          </div>
+        </div>
+    <br>
+{% endfor %}
+{% endblock %}
+

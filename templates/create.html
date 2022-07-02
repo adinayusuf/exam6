@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Новая запись {% endblock %}
+{% block content %}
+    <h1>Добавить запись</h1>
+    <form action="{% url 'create' %}" method="post">
+        {% include "partial/form.html" with button_text="Добавить" %}
+        <a href="{% url "index" %}" class="btn btn-primary">Назад</a>
+    </form>
+    <br/>
+{% endblock %}
