@@ -2,13 +2,13 @@
 {% block title %} Удаление записи {% endblock %}
 {% block content %}
 
-<form action=" " method="post">
-    {% csrf_token %}
-    <br>
-    <h2>Вы уверены что хотите удалить запись {{ guests.name }}?</h2>
-    <br>
-    <button type="submit" class="btn btn-primary">ДА</button>
-    </button><a href="{% url "index" %}" class="btn btn-primary">НЕТ</a></button>
-</form>
+    <form action=" " method="post">
+        {% csrf_token %}
+        <br>
+        <h2>Вы уверены что хотите удалить запись {{ guests.name }}?</h2>
+        <br>
+        <button type="submit" class="btn btn-primary">ДА</button>
+        </button><a href="{% url "index" %}" class="btn btn-primary">НЕТ</a></button>
+    </form>
 {% endblock %}
 

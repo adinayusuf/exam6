@@ -1,0 +1,74 @@
+[
+{
+    "model": "webapp.guestbook",
+    "pk": 1,
+    "fields": {
+        "name": "Adina Yusuf",
+        "email": "adinkayus97@gmail.com",
+        "text": "удачное место для празднования дня рождения!",
+        "create_time": "2022-07-02T06:38:39.050Z",
+        "edit_time": "2022-07-02T09:10:56.730Z",
+        "status": "active"
+    }
+},
+{
+    "model": "webapp.guestbook",
+    "pk": 2,
+    "fields": {
+        "name": "Leonardo",
+        "email": "1.kartinka.1@mail.ru",
+        "text": "Ужасный сервис больше ни ногой к вам",
+        "create_time": "2022-07-02T06:39:34.702Z",
+        "edit_time": "2022-07-02T06:39:34.702Z",
+        "status": "blocked"
+    }
+},
+{
+    "model": "webapp.guestbook",
+    "pk": 3,
+    "fields": {
+        "name": "Erol",
+        "email": "erolyikarbaba@gmail.com",
+        "text": "Asiri derece begendim kesinlikle tavsiye ederim!!!",
+        "create_time": "2022-07-02T06:40:19.612Z",
+        "edit_time": "2022-07-02T10:16:12.884Z",
+        "status": "active"
+    }
+},
+{
+    "model": "webapp.guestbook",
+    "pk": 4,
+    "fields": {
+        "name": "Dimash",
+        "email": "krasav4ik@gmail.com",
+        "text": "IT IS AMAZING",
+        "create_time": "2022-07-02T06:41:08.394Z",
+        "edit_time": "2022-07-02T06:41:08.394Z",
+        "status": "active"
+    }
+},
+{
+    "model": "webapp.guestbook",
+    "pk": 5,
+    "fields": {
+        "name": "Burak",
+        "email": "burakozcevit@gmail.com",
+        "text": "ужасное отношение к гостям 0 из0",
+        "create_time": "2022-07-02T06:42:19.903Z",
+        "edit_time": "2022-07-02T06:42:19.903Z",
+        "status": "blocked"
+    }
+},
+{
+    "model": "webapp.guestbook",
+    "pk": 12,
+    "fields": {
+        "name": "Настя",
+        "email": "natusya@gmail.com",
+        "text": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.!!",
+        "create_time": "2022-07-02T09:49:55.983Z",
+        "edit_time": "2022-07-02T10:16:48.459Z",
+        "status": "active"
+    }
+}
+]

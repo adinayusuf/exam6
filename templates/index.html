@@ -12,12 +12,12 @@
     <br>
     {% for guest in  guests %}
         <div class="card bg-light mb-3" style="max-width: 25rem;">
-        <div class="card-header">{{ guest.name }} ({{ guest.email }})<span style="padding: 0px 40px;">&nbsp;</span>
-            <a href="{% url 'update' guest.pk %}"><i class="fa-solid fa-pencil"></i></a>
-            <a href="{% url 'delete' guest.pk %}"><i class="fa-solid fa-trash-can"></i></a></div>
-        <div class="card-body">
-            <p class="card-text">{{ guest.text }}</p>
-        </div>
+            <div class="card-header">{{ guest.name }} ({{ guest.email }})<span style="padding: 0px 40px;">&nbsp;</span>
+                <a href="{% url 'update' guest.pk %}"><i class="fa-solid fa-pencil"></i></a>
+                <a href="{% url 'delete' guest.pk %}"><i class="fa-solid fa-trash-can"></i></a></div>
+            <div class="card-body">
+                <p class="card-text">{{ guest.text }}</p>
+            </div>
         </div>
         <br>
     {% endfor %}
